@@ -66,6 +66,20 @@
         align-items: center;
       }
     </style>
+    <style>
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+      
+      .rotate {
+        animation: rotation 2s infinite linear;
+      }
+      </style>
   </head>
   <body>
     <h1>NFT Relish</h1>

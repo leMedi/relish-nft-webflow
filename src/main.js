@@ -1,6 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import * as ReactDOMClient from "react-dom/client";
+import { RiLoader3Fill } from 'react-icons/ri';
 
 import ConnectBtn from "./ConnectBtn";
 import MintBtn from "./MintBtn";

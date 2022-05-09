@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { TokenInfo } from "./helpers/smartContract";
+import { RiLoader3Fill } from 'react-icons/ri';
 
 const customStyles = {
   content: {
@@ -17,18 +18,18 @@ Modal.setAppElement("#react-tx-modal");
 
 const MintStatusMessages = {
   SUBMITED: "Please Accept Transaction",
-  PENDING: "Transactions sent to blockchain",
-  SUCCESS: "Yaaay new token minted",
+  PENDING: "Transaction sent to blockchain",
+  SUCCESS: "Congratulation",
   FAILED: "Ouups",
 };
 
 const ShowToken = ({ tokenId }) => {
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <img
-        src={`https://cloudflare-ipfs.com/ipfs/QmNdqjqUgc1Zp2WSugFdnA8qTFzXzY1NQtQVCwqzBxVKBJ/${tokenId}.json`}
+        src={TokenInfo[tokenId].asset}
       />
-      <h3 style={{ color: "#1783d6" }}>{TokenInfo[tokenId].name}</h3>
+      <h3 style={{ color: "#2c5a52" }}>{TokenInfo[tokenId].name}</h3>
     </div>
   );
 };
@@ -52,8 +53,9 @@ export function MintModal({ error, mintStatus, mintedToken }) {
       style={customStyles}
       contentLabel="Nework Modal"
     >
-      <h2>{MintStatusMessages[mintStatus]}</h2>
+      <h2 style={{ fontSize: '1em' }}>{MintStatusMessages[mintStatus]}</h2>
       {error && <p className="error-msg">{error}</p>}
+      {mintStatus === "PENDING" && <RiLoader3Fill className="rotate" color="#2c5a52" style={{fontSize: "60px"}} />}
       {mintedToken && <ShowToken tokenId={mintedToken.id} />}
     </Modal>
   );
