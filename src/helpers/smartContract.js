@@ -15,7 +15,7 @@ export const PRICE = {
 };
 
 export const TokenInfo = {
-  [TOKEN.INVESTOR]: { name: "INVESTOR" },
-  [TOKEN.RESTAURANT]: { name: "RESTAURANT" },
-  [TOKEN.ARTIST]: { name: "ARTIST" },
+  [TOKEN.INVESTOR]: { name: "INVESTOR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/investor.png' },
+  [TOKEN.RESTAURANT]: { name: "RESTAURANT", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/restaurant.png' },
+  [TOKEN.ARTIST]: { name: "ARTIST", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/artist.png' },
 };
