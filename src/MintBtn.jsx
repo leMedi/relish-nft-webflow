@@ -24,7 +24,7 @@ export const MintBtn = ({ tokenId }) => {
         href="#"
         onClick={doMint}
       >
-        [{BUTTOM_MSG[mintStatus]}] Mint now
+        Mint now
       </a>
       {isConnected && mintStatus && (
         <MintModal

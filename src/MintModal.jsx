@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { useConnect, useMint } from "./AppContext";
 import { TokenInfo } from "./helpers/smartContract";
 
 const customStyles = {
