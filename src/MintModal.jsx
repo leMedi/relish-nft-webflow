@@ -5,11 +5,13 @@ import { RiLoader3Fill } from 'react-icons/ri';
 
 const customStyles = {
   content: {
+    zIndex: '9999',
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
+    textAlign: "center",
     transform: "translate(-50%, -50%)",
   },
 };
@@ -36,14 +38,13 @@ const ShowToken = ({ tokenId }) => {
 
 export function MintModal({ error, mintStatus, mintedToken }) {
   const [isOpen, setOpen] = useState(true);
-  console.log("mintedToken", mintedToken);
 
   useEffect(() => {
-    if (mintStatus !== "FAILED") setOpen(true);
+    if (mintStatus !== "FAILED" && mintStatus !== "SUCCESS") setOpen(true);
   }, [mintStatus]);
 
   function requestClose() {
-    if (mintStatus === "FAILED") setOpen(false);
+    if (mintStatus === "FAILED" || mintStatus === "SUCCESS") setOpen(false);
   }
 
   return (
