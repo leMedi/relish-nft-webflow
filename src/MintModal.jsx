@@ -19,7 +19,7 @@ Modal.setAppElement("#react-tx-modal");
 const MintStatusMessages = {
   SUBMITED: "Please Accept Transaction",
   PENDING: "Transaction sent to blockchain",
-  SUCCESS: "Congratulation",
+  SUCCESS: "Congratulations",
   FAILED: "Ouups",
 };
 
@@ -55,7 +55,9 @@ export function MintModal({ error, mintStatus, mintedToken }) {
     >
       <h2 style={{ fontSize: '1em' }}>{MintStatusMessages[mintStatus]}</h2>
       {error && <p className="error-msg">{error}</p>}
-      {mintStatus === "PENDING" && <RiLoader3Fill className="rotate" color="#2c5a52" style={{fontSize: "60px"}} />}
+      {mintStatus === "PENDING" && (<div style={{ display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center' }}>
+        <RiLoader3Fill className="rotate" color="#2c5a52" style={{fontSize: "40px"}} />
+      </div>)}
       {mintedToken && <ShowToken tokenId={mintedToken.id} />}
     </Modal>
   );

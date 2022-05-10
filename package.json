@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js ",
-    "dev": "webpack watch",
-    "dev-server": "webpack serve --open"
+    "build:watch": "webpack watch",
+    "dev": "webpack serve --open"
   },
   "author": "",
   "license": "ISC",

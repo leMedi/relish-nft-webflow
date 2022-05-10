@@ -11,7 +11,7 @@ export const TOKEN = {
 export const PRICE = {
   [TOKEN.INVESTOR]: "0.000005",
   [TOKEN.RESTAURANT]: "0.00001",
-  [TOKEN.ARTIST]: "0.000005",
+  [TOKEN.ARTIST]: "0.00002",
 };
 
 export const TokenInfo = {
