@@ -75,11 +75,11 @@
           transform: rotate(359deg);
         }
       }
-      
+
       .rotate {
         animation: rotation 2s infinite linear;
       }
-      </style>
+    </style>
   </head>
   <body>
     <h1>NFT Relish</h1>
@@ -99,7 +99,7 @@
     <div id="react-newtork-modal"></div>
     <div id="react-tx-modal"></div>
     <script type="text/javascript">
-      var SMARTCONTRACT_ADDRESS = "0x7b7058AdF93D18eB197177141a84F960FC397294";
+      var SMARTCONTRACT_ADDRESS = "0x219a319dab6CDEa339FB0Ec92C3A446E1691729b";
 
       var ABI = [
         {
@@ -110,9 +110,9 @@
               type: "address",
             },
             {
-              internalType: "uint256",
-              name: "tokenId",
-              type: "uint256",
+              internalType: "uint16",
+              name: "tokenType",
+              type: "uint16",
             },
           ],
           name: "mint",
@@ -128,6 +128,12 @@
               internalType: "address",
               name: "recipient",
               type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint16",
+              name: "tokenType",
+              type: "uint16",
             },
             {
               indexed: false,

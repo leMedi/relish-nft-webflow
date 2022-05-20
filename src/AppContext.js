@@ -168,6 +168,7 @@ export function useMint(tokenId) {
       const _mintedTokenId = mintedEvent.args.tokenId;
       setMintedToken({
         id: _mintedTokenId.toNumber(),
+        type: mintedEvent.args.tokenType
       });
     } catch (error) {
       console.error(error);

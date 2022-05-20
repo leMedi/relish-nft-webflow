@@ -25,13 +25,13 @@ const MintStatusMessages = {
   FAILED: "Ouups",
 };
 
-const ShowToken = ({ tokenId }) => {
+const ShowToken = ({ tokenType }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <img
-        src={TokenInfo[tokenId].asset}
+        src={TokenInfo[tokenType].asset}
       />
-      <h3 style={{ color: "#2c5a52" }}>{TokenInfo[tokenId].name}</h3>
+      <h3 style={{ color: "#2c5a52" }}>{TokenInfo[tokenType].name}</h3>
     </div>
   );
 };
@@ -59,7 +59,7 @@ export function MintModal({ error, mintStatus, mintedToken }) {
       {mintStatus === "PENDING" && (<div style={{ display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center' }}>
         <RiLoader3Fill className="rotate" color="#2c5a52" style={{fontSize: "40px"}} />
       </div>)}
-      {mintedToken && <ShowToken tokenId={mintedToken.id} />}
+      {mintedToken && <ShowToken tokenType={mintedToken.type} tokenId={mintedToken.id} />}
     </Modal>
   );
 }
