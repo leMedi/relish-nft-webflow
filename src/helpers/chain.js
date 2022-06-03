@@ -7,6 +7,7 @@ const mainnet = {
     decimals: 18,
   },
   rpcUrls: ["https://mainnet.infura.io/v3/"],
+  infuraId: '',
   blockExplorerUrls: [`https://etherscan.io/`],
 };
 
@@ -19,6 +20,7 @@ const testnet = {
     decimals: 18,
   },
   rpcUrls: ["https://rinkeby.infura.io/v3/"],
+  infuraId: '0c18f4e330084b83a0de9c2559074e59',
   blockExplorerUrls: [`https://rinkeby.etherscan.io`],
 };
 

@@ -21,13 +21,12 @@ export function AppProvider({ children }) {
 }
 
 export function useConnect(shouldConnectToCachedProvider = false) {
-  const { web3Provider, address, setContext } = useContext(AppContext);
+  const { provider, web3Provider, address, setContext } = useContext(AppContext);
 
   const connect = useCallback(async function () {
     const _provider = await web3Modal.connect();
-
+    
     const _web3Provider = new providers.Web3Provider(_provider, "any");
-
     const _signer = _web3Provider.getSigner();
     const currentAddress = await _signer.getAddress();
 
@@ -61,6 +60,23 @@ export function useConnect(shouldConnectToCachedProvider = false) {
     });
   }, []);
 
+  const disconnect = async () => {
+    console.log('disconnect')
+    try {
+      if(provider && provider.close)
+        await provider.close();
+
+      if(web3Provider && web3Provider.close)
+        await web3web3Provider.close();
+
+      await web3Modal.clearCachedProvider();
+    } catch (err) {
+      console.error('Error disconnect wallet', err);
+    }
+    setContext({});
+    window.localStorage.clear();
+  }
+
   useEffect(() => {
     if (shouldConnectToCachedProvider && web3Modal.cachedProvider) {
       connect();
@@ -69,6 +85,7 @@ export function useConnect(shouldConnectToCachedProvider = false) {
 
   return {
     connect,
+    disconnect,
     isConnected: web3Provider && address,
   };
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MINT_STATUS, useConnect, useMint } from "./AppContext";
 import { TOKEN } from "./helpers/smartContract";
 import MintModal from "./MintModal";
@@ -10,10 +10,23 @@ const BUTTOM_MSG = {
 
 export const MintBtn = ({ tokenId }) => {
   const { isConnected, connect } = useConnect();
+  const [shouldMintAfterConnect, setShouldMintAfterConnect] = useState(false);
   const { mint, mintStatus, error, mintedToken } = useMint(tokenId);
 
+  useEffect(() => {
+    console.log('mint', 'useEffect', isConnected && shouldMintAfterConnect, {isConnected, shouldMintAfterConnect});
+    if (isConnected && shouldMintAfterConnect) {
+      mint();
+      setShouldMintAfterConnect(false);
+    }
+  }, [isConnected, shouldMintAfterConnect]);
+
   const doMint = async () => {
-    if (!isConnected) await connect();
+    if (!isConnected) {
+      console.log('mint', 'not connected');
+      await connect();
+      return setShouldMintAfterConnect(true);
+    }
     mint();
   };
 

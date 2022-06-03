@@ -1,8 +1,18 @@
 import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import CHAIN from "./chain";
 
-const providerOptions = {};
+const providerOptions = {
+  walletconnect: {
+    package: WalletConnectProvider,
+    options: {
+      infuraId: CHAIN.infuraId
+    }
+  }
+};
+
 export const web3Modal = new Web3Modal({
-  network: "mainnet", // optional
+  network: "mainnet",
   cacheProvider: true,
   providerOptions,
 });
