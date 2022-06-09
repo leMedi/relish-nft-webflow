@@ -3,19 +3,19 @@ export const SMARTCONTRACT_ADDRESS = window.SMARTCONTRACT_ADDRESS;
 export const ABI = window.ABI;
 
 export const TOKEN = {
-  FAN: "0",
-  REGULAR: "1",
-  VIP: "2",
+  LEVEL1: "0",
+  LEVEL2: "1",
+  LEVEL3: "2",
 };
 
 export const PRICE = {
-  [TOKEN.FAN]: "0.000005",
-  [TOKEN.REGULAR]: "0.00001",
-  [TOKEN.VIP]: "0.00002",
+  [TOKEN.LEVEL1]: "0.000005",
+  [TOKEN.LEVEL2]: "0.00001",
+  [TOKEN.LEVEL3]: "0.00002",
 };
 
 export const TokenInfo = {
-  [TOKEN.FAN]: { name: "FAN", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/fan.png' },
-  [TOKEN.REGULAR]: { name: "REGULAR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/regular.png' },
-  [TOKEN.VIP]: { name: "VIP", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/vip.png' },
+  [TOKEN.LEVEL1]: { name: "FAN", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/fan.png' },
+  [TOKEN.LEVEL2]: { name: "REGULAR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/regular.png' },
+  [TOKEN.LEVEL3]: { name: "VIP", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/vip.png' },
 };

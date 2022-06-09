@@ -25,12 +25,12 @@ root.render(
   <>
     <AppProvider>
       {connectBtnNode && createPortal(<ConnectBtn />, connectBtnNode)}
-      {mintBtnLevel1Node && createPortal(<MintBtn tokenId={TOKEN.FAN} />, mintBtnLevel1Node)}
+      {mintBtnLevel1Node && createPortal(<MintBtn tokenId={TOKEN.LEVEL1} />, mintBtnLevel1Node)}
       {mintBtnLevel2Node && createPortal(
-        <MintBtn tokenId={TOKEN.REGULAR} />,
+        <MintBtn tokenId={TOKEN.LEVEL2} />,
         mintBtnLevel2Node
       )}
-      {mintBtnLevel3Node && createPortal(<MintBtn tokenId={TOKEN.VIP} />, mintBtnLevel3Node)}
+      {mintBtnLevel3Node && createPortal(<MintBtn tokenId={TOKEN.LEVEL3} />, mintBtnLevel3Node)}
       <ChangeNetworkModal />
     </AppProvider>
   </>
