@@ -19,10 +19,10 @@ const customStyles = {
 Modal.setAppElement("#react-tx-modal");
 
 const MintStatusMessages = {
-  SUBMITED: "Please Accept Transaction",
-  PENDING: "Transaction sent to blockchain",
-  SUCCESS: "Congratulations",
-  FAILED: "Ouups",
+  SUBMITED: "Please approve transaction",
+  PENDING: "Minting ...",
+  SUCCESS: "Mint successful!",
+  FAILED: "Sorry, an error occurred",
 };
 
 const ShowToken = ({ tokenType }) => {
