@@ -16,21 +16,21 @@ const prepareDiv = (id) => {
 
 const connectBtnNode = prepareDiv("header-web3-btn");
 
-const mintBtnFanNode = prepareDiv("mint-btn-fan");
-const mintBtnRegularNode = prepareDiv("mint-btn-regular");
-const mintBtnVipNode = prepareDiv("mint-btn-vip");
+const mintBtnLevel1Node = prepareDiv("mint-btn-level1");
+const mintBtnLevel2Node = prepareDiv("mint-btn-level2");
+const mintBtnLevel3Node = prepareDiv("mint-btn-level3");
 
 const root = ReactDOMClient.createRoot(document.getElementById("react-root"));
 root.render(
   <>
     <AppProvider>
       {connectBtnNode && createPortal(<ConnectBtn />, connectBtnNode)}
-      {mintBtnFanNode && createPortal(<MintBtn tokenId={TOKEN.FAN} />, mintBtnFanNode)}
-      {mintBtnRegularNode && createPortal(
+      {mintBtnLevel1Node && createPortal(<MintBtn tokenId={TOKEN.FAN} />, mintBtnLevel1Node)}
+      {mintBtnLevel2Node && createPortal(
         <MintBtn tokenId={TOKEN.REGULAR} />,
-        mintBtnRegularNode
+        mintBtnLevel2Node
       )}
-      {mintBtnVipNode && createPortal(<MintBtn tokenId={TOKEN.VIP} />, mintBtnVipNode)}
+      {mintBtnLevel3Node && createPortal(<MintBtn tokenId={TOKEN.VIP} />, mintBtnLevel3Node)}
       <ChangeNetworkModal />
     </AppProvider>
   </>
