@@ -196,3 +196,17 @@ export function useMint(tokenId) {
 
   return { mint, mintStatus, error, mintedToken };
 }
+
+const noSignerProvider = new providers.AlchemyProvider(
+  "rinkeby",
+  "njXvjmtpVNQBph_dw1gdkZ7qeHzsbbc_"
+);
+
+export const useSmartContract = () => {
+  const contract = useMemo(() => {
+    if (!noSignerProvider) return null;
+    return new Contract(SMARTCONTRACT_ADDRESS, ABI, noSignerProvider);
+  }, [noSignerProvider]);
+
+  return contract;
+}

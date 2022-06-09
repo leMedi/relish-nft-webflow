@@ -93,13 +93,21 @@
         <div id="mint-btn-level2"></div>
         <div id="mint-btn-level3"></div>
       </div>
+      <div>
+        Total ETH raised:
+        <div id="total-eth-raised"></div>
+      </div>
+      <div>
+        Total tokens left:
+        <div id="total-tokens-left"></div>
+      </div>
     </div>
 
     <div id="react-root"></div>
     <div id="react-newtork-modal"></div>
     <div id="react-tx-modal"></div>
     <script type="text/javascript">
-      var SMARTCONTRACT_ADDRESS = "0xd06923Af7Eab80755300B91b069C205AeB728421";
+      var SMARTCONTRACT_ADDRESS = "0xB6D63d2aA365E4F82afcEA4E5befe8A880514A16";
 
       var ABI = [
         {
@@ -144,6 +152,45 @@
           ],
           name: "Minted",
           type: "event",
+        },
+        {
+          inputs: [],
+          name: "mintInfo",
+          outputs: [
+            {
+              internalType: "uint256[6]",
+              name: "",
+              type: "uint256[6]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "currentOwners",
+          outputs: [
+            {
+              internalType: "address[]",
+              name: "",
+              type: "address[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalTokensLeft",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
         },
       ];
     </script>
