@@ -33,7 +33,7 @@ export const MintBtn = ({ tokenId }) => {
   return (
     <>
       <a
-        className="primary-button freight-text w-button"
+        className="primary-button freight-text mint-btn mint"
         href="#"
         onClick={doMint}
       >
