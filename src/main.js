@@ -6,7 +6,7 @@ import ConnectBtn from "./ConnectBtn";
 import MintBtn from "./MintBtn";
 import EthRaised from "./EthRaised";
 import TotalTokensLeft from "./TotalTokensLeft";
-// import Owners from "./Owners";
+import Owners from "./Owners";
 import { AppProvider } from "./AppContext";
 import ChangeNetworkModal from "./ChangeNetworkModal";
 import { TOKEN } from "./helpers/smartContract";
@@ -25,12 +25,14 @@ const mintBtnLevel3Node = prepareDiv("mint-btn-level3");
 
 const totalEthRaisedNode = prepareDiv("total-eth-raised");
 const totalTokensLeftNode = prepareDiv("total-tokens-left");
+const tokenOwnersLeftNode = prepareDiv("token-owners");
 
 const root = ReactDOMClient.createRoot(document.getElementById("react-root"));
 root.render(
   <>
     {totalEthRaisedNode && createPortal(<EthRaised />, totalEthRaisedNode)}
     {totalTokensLeftNode && createPortal(<TotalTokensLeft />, totalTokensLeftNode)}
+    {tokenOwnersLeftNode && createPortal(<Owners />, tokenOwnersLeftNode)}
     <AppProvider>
       {connectBtnNode && createPortal(<ConnectBtn />, connectBtnNode)}
       {mintBtnLevel1Node &&

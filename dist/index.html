@@ -60,7 +60,7 @@
         font-weight: 600;
         font-size: 24px;
         line-height: 150%;
-        color: #352A2E;
+        color: #352a2e;
         margin: 24px 0 8px 0;
       }
 
@@ -69,7 +69,7 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 160%;
-        color: #352A2E;
+        color: #352a2e;
         margin: 0;
       }
 
@@ -80,7 +80,7 @@
         transition-property: background-color;
         transition-duration: 500ms;
         transition-timing-function: ease;
-        color: #FAF6F2;
+        color: #faf6f2;
         font-size: 20px;
         letter-spacing: -0.06em;
         line-height: 23px;
@@ -91,21 +91,21 @@
       }
 
       .mint-modal-btn.secondary {
-        background-color: #FFF;
+        background-color: #fff;
         color: #374151;
         border: 1px solid rgba(44, 90, 82, 0.5);
       }
 
       .mint-modal-btn.secondary:hover {
         background-color: #374151;
-        color: #FFF;
+        color: #fff;
       }
 
       /* .mint-modal-close-btn {
         width: 100%;
         cursor: pointer;
         margin-top: 54px;
-      } */</style><script defer="defer" src="bundle.js"></script></head><body><h1>NFT Relish</h1><p>Webflow Mint Test Page</p><div><div class="nav-right"><div id="header-web3-btn"></div></div><div class="body"><div id="mint-btn-level1"></div><div id="mint-btn-level2"></div><div id="mint-btn-level3"></div></div><div>Total ETH raised:<div id="total-eth-raised"></div></div><div>Total tokens left:<div id="total-tokens-left"></div></div></div><div id="react-root"></div><div id="react-newtork-modal"></div><div id="react-tx-modal"></div><script>var SMARTCONTRACT_ADDRESS = "0xB6D63d2aA365E4F82afcEA4E5befe8A880514A16";
+      } */</style><script defer="defer" src="bundle.js"></script></head><body><h1>NFT Relish</h1><p>Webflow Mint Test Page</p><div><div class="nav-right"><div id="header-web3-btn"></div></div><div class="body"><div id="mint-btn-level1"></div><div id="mint-btn-level2"></div><div id="mint-btn-level3"></div></div><div>Total ETH raised:<div id="total-eth-raised"></div></div><div>Total tokens left:<div id="total-tokens-left"></div></div><div id="token-owners"></div></div><div id="react-root"></div><div id="react-newtork-modal"></div><div id="react-tx-modal"></div><script>var SMARTCONTRACT_ADDRESS = "0xA1c32b778C9682E735025E9C9167Bbce75d6fA92";
 
       var ABI = [
         {
@@ -165,8 +165,14 @@
           type: "function",
         },
         {
-          inputs: [],
-          name: "currentOwners",
+          inputs: [
+            {
+              internalType: "uint16",
+              name: "tokenType",
+              type: "uint16",
+            },
+          ],
+          name: "currentOwnersForType",
           outputs: [
             {
               internalType: "address[]",
