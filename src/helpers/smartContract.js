@@ -15,7 +15,7 @@ export const PRICE = {
 };
 
 export const TokenInfo = {
-  [TOKEN.LEVEL1]: { name: "FAN", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/fan.png' },
-  [TOKEN.LEVEL2]: { name: "REGULAR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/regular.png' },
-  [TOKEN.LEVEL3]: { name: "VIP", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/vip.png' },
+  [TOKEN.LEVEL1]: { total: 200, name: "FAN", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/fan.png' },
+  [TOKEN.LEVEL2]: { total: 200, name: "REGULAR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/regular.png' },
+  [TOKEN.LEVEL3]: { total: 200, name: "VIP", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/vip.png' },
 };
