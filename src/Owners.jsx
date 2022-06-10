@@ -45,7 +45,7 @@ export const Owners = () => {
       <div className="div-block-29 slide-bottom">
         {listToRender.map(({address, type}) => <Owner key={address} address={address} type={type} />)}
       </div>
-      {!showAll && <a href="#" onClick={() => setShowAll(true)} class="primary-button see-more freight-text w-button">See more</a>}
+      {(!showAll && owners.length > 10) && <a href="#" onClick={() => setShowAll(true)} class="primary-button see-more freight-text w-button">See more</a>}
     </>
   );
 };
