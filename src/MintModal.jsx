@@ -5,6 +5,7 @@ import { Oval } from "react-loader-spinner";
 import { MINT_STATUS } from "./AppContext";
 import ErrorIcon from "./assets/error.svg";
 import CloseIcon from "./assets/close.svg";
+import { flexCenteredStyle } from './helpers/styles'
 
 const genModalStyles = (status) => {
   const isSuccess = status === MINT_STATUS.SUCCESS;
@@ -28,12 +29,6 @@ const genModalStyles = (status) => {
 };
 
 Modal.setAppElement("#react-tx-modal");
-
-const flexCenteredStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
 
 const Loader = ({ title, content }) => (
   <div style={{ padding: "18px 26px", width: "100%", boxSizing: "border-box" }}>

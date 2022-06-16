@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import { useConnect, useNetwork } from "./AppContext";
 import NETWORK from "./helpers/chain";
+import { flexCenteredStyle } from './helpers/styles'
 
 const customStyles = {
   content: {
@@ -30,15 +31,18 @@ export function ChangeNetworkModal() {
       style={customStyles}
       contentLabel="Nework Modal"
     >
-      <h2>Network {name} not supported</h2>
-      {switchToSupportedNetwork && (
-        <button
-          className="primary-button freight-text w-button"
-          onClick={switchToSupportedNetwork}
-        >
-          Switch to {NETWORK.chainName}
-        </button>
-      )}
+      <div style={{...flexCenteredStyle, flexDirection: "column"}}>
+        <h2 className="mint-modal-title">Network {name} not supported</h2>
+        {switchToSupportedNetwork && (
+          <button
+            className="primary-button freight-text w-button"
+            style={{ fontSize: '18px' }}
+            onClick={switchToSupportedNetwork}
+          >
+            Switch to {NETWORK.chainName}
+          </button>
+        )}
+      </div>
     </Modal>
   );
 }
