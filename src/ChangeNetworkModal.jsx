@@ -5,6 +5,7 @@ import NETWORK from "./helpers/chain";
 
 const customStyles = {
   content: {
+    zIndex: "9999",
     top: "50%",
     left: "50%",
     right: "auto",
