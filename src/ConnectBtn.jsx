@@ -1,5 +1,6 @@
 import React from "react";
 import { ImExit } from "react-icons/im";
+import { flexCenteredStyle } from './helpers/styles'
 
 import { useConnect, useWallet } from "./AppContext";
 
@@ -9,12 +10,13 @@ export const ConnectBtn = () => {
 
   if (isConnected)
     return (
-      <div className="wallet-info">
-        <span className="text-block-25">{truncatedAddress}</span>
+      <div className="wallet-info" style={{ ...flexCenteredStyle }}>
+        <span className="text-block-25" style={{ fontSize: "19px" }}>{truncatedAddress}</span>
         <a
           className="text-block-25"
           style={{
-            fontSize: "22px",
+            ...flexCenteredStyle,
+            fontSize: "18px",
             marginLeft: "15px",
           }}
           href="#"
