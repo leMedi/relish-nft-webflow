@@ -1,9 +1,9 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
-import { useSmartContract } from "./AppContext";
+import { useSmartContract } from "./SmartContractContext";
 
 export const TotalTokensLeft = () => {
-  const contract = useSmartContract();
+  const {contract} = useSmartContract();
   const [totalLeft, setTotalLeft] = useState('0');
 
   useEffect(() => {

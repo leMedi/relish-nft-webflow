@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSmartContract } from "./AppContext";
+import { useSmartContract } from "./SmartContractContext";
 import { TOKEN, TokenInfo } from "./helpers/smartContract";
 import { computeTruncatedAccountId } from "./helpers/wallet";
 
@@ -16,7 +16,7 @@ const Owner = ({ address, type }) => (
 export const Owners = () => {
   const [showAll, setShowAll] = useState(false);
   const [owners, setOwners] = useState([]);
-  const contract = useSmartContract();
+  const {contract} = useSmartContract();
 
   useEffect(() => {
     const loadData = async () => {
