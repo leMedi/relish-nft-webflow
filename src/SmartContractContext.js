@@ -1,4 +1,6 @@
-import React, {
+import React from "react";
+import { Contract, providers } from "ethers";
+import {
   createContext,
   useCallback,
   useContext,
@@ -6,17 +8,33 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Contract, providers, utils } from "ethers";
-import { web3Modal, parseMintEvent } from "./helpers/web3";
-import { computeTruncatedAccountId } from "./helpers/wallet";
-import { ABI, PRICE, SMARTCONTRACT_ADDRESS } from "./helpers/smartContract";
-import NETWORK from "./helpers/chain";
+import { ABI, SMARTCONTRACT_ADDRESS } from "./helpers/smartContract";
 
 export const SmartContractContext = createContext();
 
 export function SmartContractProvider({ children }) {
   const [context, setContext] = useState({});
-  const value = { ...context, setContext };
+  const [usdPrice, setUsdPrice] = useState(null);
+
+  const getUsdPrice = useCallback(async () => {
+    try {
+      const response = await fetch(
+        "https://api.coinstats.app/public/v1/tickers?exchange=binance&pair=ETH-USDT"
+      )
+        .then((response) => response.json())
+        .then((data) => data.tickers[0]);
+      setUsdPrice(Number(response.price));
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    getUsdPrice();
+  }, []);
+
+  const value = { ...context, usdPrice, setContext };
+
   return (
     <SmartContractContext.Provider value={value}>
       {children}
@@ -31,8 +49,6 @@ const noSignerProvider = new providers.AlchemyProvider(
 
 export const useSmartContract = () => {
   const { setContext, ...context } = useContext(SmartContractContext);
-
-  console.log("useSmartContractcontext", context);
 
   const contract = useMemo(() => {
     if (!noSignerProvider) return null;

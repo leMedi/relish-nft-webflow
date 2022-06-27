@@ -2,18 +2,19 @@ import React from "react";
 import { createPortal } from "react-dom";
 import * as ReactDOMClient from "react-dom/client";
 
-import ConnectBtn from "./ConnectBtn";
-import MintBtn from "./MintBtn";
-import EthRaised from "./EthRaised";
-import TotalTokens from "./TotalTokens";
-import TotalTokensLeft from "./TotalTokensLeft";
-import TokenLevelPrice from "./TokenLevelPrice";
-import Owners from "./Owners";
 import { AppProvider } from "./AppContext";
 import ChangeNetworkModal from "./ChangeNetworkModal";
+import ConnectBtn from "./ConnectBtn";
+import EthRaised from "./EthRaised";
 import { TOKEN } from "./helpers/smartContract";
-import TokensLeftForLevel from "./TokensLeftForLevel";
+import MintBtn from "./MintBtn";
+import Owners from "./Owners";
 import { SmartContractProvider } from "./SmartContractContext";
+import TokenLevelPrice from "./TokenLevelPrice";
+import TokenLevelPriceUSD from "./TokenLevelPriceUSD";
+import TokensLeftForLevel from "./TokensLeftForLevel";
+import TotalTokens from "./TotalTokens";
+import TotalTokensLeft from "./TotalTokensLeft";
 
 const prepareDiv = (id) => {
   const div = document.getElementById(id);
@@ -39,6 +40,10 @@ const tokenLevel1PriceNode = prepareDiv("token-level1-price");
 const tokenLevel2PriceNode = prepareDiv("token-level2-price");
 const tokenLevel3PriceNode = prepareDiv("token-level3-price");
 
+const tokenLevel1PriceUsdNode = prepareDiv("token-level1-price-usd");
+const tokenLevel2PriceUsdNode = prepareDiv("token-level2-price-usd");
+const tokenLevel3PriceUsdNode = prepareDiv("token-level3-price-usd");
+
 
 const root = ReactDOMClient.createRoot(document.getElementById("react-root"));
 root.render(
@@ -47,6 +52,10 @@ root.render(
     {tokenLevel1PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL1} />, tokenLevel1PriceNode)}
     {tokenLevel2PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL2} />, tokenLevel2PriceNode)}
     {tokenLevel3PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceNode)}
+
+    {tokenLevel1PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL1} />, tokenLevel1PriceUsdNode)}
+    {tokenLevel2PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL2} />, tokenLevel2PriceUsdNode)}
+    {tokenLevel3PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceUsdNode)}
 
     {totalEthRaisedNode && createPortal(<EthRaised />, totalEthRaisedNode)}
     {totalTokensNode &&
