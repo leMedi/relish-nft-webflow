@@ -121,10 +121,10 @@
       }
 
       .ReactModal__Overlay {
-        z-index: 9999!important;
+        z-index: 9999 !important;
       }
       .ReactModal__Overlay.ReactModal__Overlay--after-open {
-        z-index: 9999!important;
+        z-index: 9999 !important;
       }
     </style>
   </head>
@@ -145,6 +145,10 @@
         <div id="total-eth-raised"></div>
       </div>
       <div>
+        Total tokens:
+        <div id="total-tokens"></div>
+      </div>
+      <div>
         Total tokens left:
         <div id="total-tokens-left"></div>
       </div>
@@ -160,13 +164,11 @@
     <div>
       prices:
       <div>
-        level1 : <span id="token-level1-price"></span>
-        level2 : <span id="token-level2-price"></span>
-        level3 : <span id="token-level3-price"></span>
+        level1 : <span id="token-level1-price"></span> level2 :
+        <span id="token-level2-price"></span> level3 :
+        <span id="token-level3-price"></span>
       </div>
-
     </div>
-
 
     <div id="react-root"></div>
     <div id="react-newtork-modal"></div>
@@ -261,6 +263,19 @@
             },
           ],
           stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
           type: "function",
         },
       ];

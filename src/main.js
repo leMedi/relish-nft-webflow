@@ -5,6 +5,7 @@ import * as ReactDOMClient from "react-dom/client";
 import ConnectBtn from "./ConnectBtn";
 import MintBtn from "./MintBtn";
 import EthRaised from "./EthRaised";
+import TotalTokens from "./TotalTokens";
 import TotalTokensLeft from "./TotalTokensLeft";
 import TokenLevelPrice from "./TokenLevelPrice";
 import Owners from "./Owners";
@@ -27,6 +28,7 @@ const mintBtnLevel2Node = prepareDiv("mint-btn-level2");
 const mintBtnLevel3Node = prepareDiv("mint-btn-level3");
 
 const totalEthRaisedNode = prepareDiv("total-eth-raised");
+const totalTokensNode = prepareDiv("total-tokens");
 const totalTokensLeftNode = prepareDiv("total-tokens-left");
 const tokensLevel1Node = prepareDiv("tokens-level1");
 const tokensLevel2Node = prepareDiv("tokens-level2");
@@ -47,6 +49,8 @@ root.render(
     {tokenLevel3PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceNode)}
 
     {totalEthRaisedNode && createPortal(<EthRaised />, totalEthRaisedNode)}
+    {totalTokensNode &&
+      createPortal(<TotalTokens />, totalTokensNode)}
     {totalTokensLeftNode &&
       createPortal(<TotalTokensLeft />, totalTokensLeftNode)}
     {tokenOwnersLeftNode && createPortal(<Owners />, tokenOwnersLeftNode)}

@@ -109,11 +109,11 @@
       }
 
       .ReactModal__Overlay {
-        z-index: 9999!important;
+        z-index: 9999 !important;
       }
       .ReactModal__Overlay.ReactModal__Overlay--after-open {
-        z-index: 9999!important;
-      }</style><script defer="defer" src="bundle.js"></script></head><body><h1>NFT Relish</h1><p>Webflow Mint Test Page</p><div><div class="nav-right"><div id="header-web3-btn"></div></div><div class="body"><div id="mint-btn-level1"></div><div id="mint-btn-level2"></div><div id="mint-btn-level3"></div></div><div>Total ETH raised:<div id="total-eth-raised"></div></div><div>Total tokens left:<div id="total-tokens-left"></div></div><div>tokens:<div id="tokens-level1"></div><div id="tokens-level2"></div><div id="tokens-level3"></div></div><div id="token-owners"></div></div><div>prices:<div>level1 : <span id="token-level1-price"></span> level2 : <span id="token-level2-price"></span> level3 : <span id="token-level3-price"></span></div></div><div id="react-root"></div><div id="react-newtork-modal"></div><div id="react-tx-modal"></div><script>var SMARTCONTRACT_ADDRESS = "0xA1c32b778C9682E735025E9C9167Bbce75d6fA92";
+        z-index: 9999 !important;
+      }</style><script defer="defer" src="bundle.js"></script></head><body><h1>NFT Relish</h1><p>Webflow Mint Test Page</p><div><div class="nav-right"><div id="header-web3-btn"></div></div><div class="body"><div id="mint-btn-level1"></div><div id="mint-btn-level2"></div><div id="mint-btn-level3"></div></div><div>Total ETH raised:<div id="total-eth-raised"></div></div><div>Total tokens:<div id="total-tokens"></div></div><div>Total tokens left:<div id="total-tokens-left"></div></div><div>tokens:<div id="tokens-level1"></div><div id="tokens-level2"></div><div id="tokens-level3"></div></div><div id="token-owners"></div></div><div>prices:<div>level1 : <span id="token-level1-price"></span> level2 : <span id="token-level2-price"></span> level3 : <span id="token-level3-price"></span></div></div><div id="react-root"></div><div id="react-newtork-modal"></div><div id="react-tx-modal"></div><script>var SMARTCONTRACT_ADDRESS = "0xA1c32b778C9682E735025E9C9167Bbce75d6fA92";
 
       var ABI = [
         {
@@ -202,6 +202,19 @@
             },
           ],
           stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
           type: "function",
         },
       ];</script></body></html>
