@@ -9,13 +9,13 @@ export const TOKEN = {
 };
 
 export const PRICE = {
-  [TOKEN.LEVEL1]: "0.000005",
-  [TOKEN.LEVEL2]: "0.00001",
-  [TOKEN.LEVEL3]: "0.00002",
+  [TOKEN.LEVEL1]: "0.01",
+  [TOKEN.LEVEL2]: "0.033",
+  [TOKEN.LEVEL3]: "0.15",
 };
 
 export const TokenInfo = {
-  [TOKEN.LEVEL1]: { total: 200, name: "FAN", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/fan.png' },
-  [TOKEN.LEVEL2]: { total: 200, name: "REGULAR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/regular.png' },
-  [TOKEN.LEVEL3]: { total: 200, name: "VIP", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/vip.png' },
+  [TOKEN.LEVEL1]: { total: 200, name: "FAN", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/fan.jpg' },
+  [TOKEN.LEVEL2]: { total: 10, name: "REGULAR", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/regular.jpg' },
+  [TOKEN.LEVEL3]: { total: 1, name: "VIP", asset: 'https://lemedi.github.io/relish-nft-webflow/dist/vip.jpg' },
 };
