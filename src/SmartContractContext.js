@@ -43,8 +43,8 @@ export function SmartContractProvider({ children }) {
 }
 
 const noSignerProvider = new providers.AlchemyProvider(
-  "rinkeby",
-  "njXvjmtpVNQBph_dw1gdkZ7qeHzsbbc_"
+  "mainnet",
+  "pMPhrC4IWST8yIaGvXh6iP6BXeyCYcz7"
 );
 
 export const useSmartContract = () => {
