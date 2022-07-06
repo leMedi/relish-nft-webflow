@@ -111,7 +111,7 @@ const MintSuccess = ({ mintedToken, onClose }) => (
     {mintedToken && TokenInfo[mintedToken.type] && (
       <img alt="minted token" src={TokenInfo[mintedToken.type].asset} />
     )}
-    <div style={{ width: "100%", textAlign: "left" }}>
+    <div style={{ width: "100%", textAlign: "center" }}>
       <h3 className="mint-modal-title">MINTING SUCCESSFUL!</h3>
       {/* <p className="mint-modal-content">MINTING SUCCESSFUL!</p> */}
     </div>
