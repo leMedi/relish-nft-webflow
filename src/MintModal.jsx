@@ -170,7 +170,8 @@ export function MintModal({ error, mintStatus, mintedToken }) {
       {mintStatus === MINT_STATUS.PENDING && (
         <Loader
           title="Loading..."
-          content="Please wait while we process your mint."
+          content={<>Please wait while we process your mint.<br />
+This could take a few minutes. <b>Do not refresh this page.</b></>}
         />
       )}
       {mintStatus === MINT_STATUS.SUCCESS && (
