@@ -24,4 +24,4 @@ const testnet = {
   blockExplorerUrls: [`https://rinkeby.etherscan.io`],
 };
 
-export default testnet;
+export default mainnet;

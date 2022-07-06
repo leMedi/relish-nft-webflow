@@ -9,9 +9,9 @@ export const TOKEN = {
 };
 
 export const PRICE = {
-  [TOKEN.LEVEL1]: "0.01",
-  [TOKEN.LEVEL2]: "0.033",
-  [TOKEN.LEVEL3]: "0.15",
+  [TOKEN.LEVEL1]: "0.1",
+  [TOKEN.LEVEL2]: "0.33",
+  [TOKEN.LEVEL3]: "1.5",
 };
 
 export const TokenInfo = {
