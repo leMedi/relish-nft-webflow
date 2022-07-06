@@ -112,13 +112,10 @@ const MintSuccess = ({ mintedToken, onClose }) => (
       <img alt="minted token" src={TokenInfo[mintedToken.type].asset} />
     )}
     <div style={{ width: "100%", textAlign: "left" }}>
-      <h3 className="mint-modal-title">Minting Successful!</h3>
-      <p className="mint-modal-content">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-        labore quo, magni nobis itaque aspernatur optio corporis
-      </p>
+      <h3 className="mint-modal-title">MINTING SUCCESSFUL!</h3>
+      {/* <p className="mint-modal-content">MINTING SUCCESSFUL!</p> */}
     </div>
-    <div
+    {/* <div
       style={{
         ...flexCenteredStyle,
         marginTop: "48px",
@@ -137,7 +134,7 @@ const MintSuccess = ({ mintedToken, onClose }) => (
       >
         See more
       </button>
-    </div>
+    </div> */}
   </div>
 );
 
@@ -164,7 +161,7 @@ export function MintModal({ error, mintStatus, mintedToken }) {
       {mintStatus === MINT_STATUS.SUBMITED && (
         <Loader
           title="Please approve transaction"
-          content="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+          content=""
         />
       )}
       {mintStatus === MINT_STATUS.FAILED && (

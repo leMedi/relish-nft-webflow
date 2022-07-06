@@ -3,11 +3,6 @@ import { MINT_STATUS, useConnect, useMint } from "./AppContext";
 import { TOKEN } from "./helpers/smartContract";
 import MintModal from "./MintModal";
 
-const BUTTOM_MSG = {
-  [MINT_STATUS.PENDING]: "Minting ...",
-  [MINT_STATUS.SUBMITED]: "Minting ...",
-};
-
 export const MintBtn = ({ tokenId }) => {
   const { isConnected, connect } = useConnect();
   const [shouldMintAfterConnect, setShouldMintAfterConnect] = useState(false);
