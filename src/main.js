@@ -34,7 +34,7 @@ const totalTokensLeftNode = prepareDiv("total-tokens-left");
 const tokensLevel1Node = prepareDiv("tokens-level1");
 const tokensLevel2Node = prepareDiv("tokens-level2");
 const tokensLevel3Node = prepareDiv("tokens-level3");
-const tokenOwnersLeftNode = prepareDiv("token-owners");
+const tokenOwnersNode = prepareDiv("token-owners");
 
 const tokenLevel1PriceNode = prepareDiv("token-level1-price");
 const tokenLevel2PriceNode = prepareDiv("token-level2-price");
@@ -49,46 +49,46 @@ const root = ReactDOMClient.createRoot(document.getElementById("react-root"));
 root.render(
   <>
     <SmartContractProvider>
-    {tokenLevel1PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL1} />, tokenLevel1PriceNode)}
-    {tokenLevel2PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL2} />, tokenLevel2PriceNode)}
-    {tokenLevel3PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceNode)}
+      {tokenLevel1PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL1} />, tokenLevel1PriceNode)}
+      {tokenLevel2PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL2} />, tokenLevel2PriceNode)}
+      {tokenLevel3PriceNode && createPortal(<TokenLevelPrice tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceNode)}
 
-    {tokenLevel1PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL1} />, tokenLevel1PriceUsdNode)}
-    {tokenLevel2PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL2} />, tokenLevel2PriceUsdNode)}
-    {tokenLevel3PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceUsdNode)}
+      {tokenLevel1PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL1} />, tokenLevel1PriceUsdNode)}
+      {tokenLevel2PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL2} />, tokenLevel2PriceUsdNode)}
+      {tokenLevel3PriceUsdNode && createPortal(<TokenLevelPriceUSD tokenType={TOKEN.LEVEL3} />, tokenLevel3PriceUsdNode)}
 
-    {totalEthRaisedNode && createPortal(<EthRaised />, totalEthRaisedNode)}
-    {totalTokensNode &&
-      createPortal(<TotalTokens />, totalTokensNode)}
-    {totalTokensLeftNode &&
-      createPortal(<TotalTokensLeft />, totalTokensLeftNode)}
-    {tokenOwnersLeftNode && createPortal(<Owners />, tokenOwnersLeftNode)}
-    {tokensLevel1Node &&
-      createPortal(
-        <TokensLeftForLevel tokenType={TOKEN.LEVEL1} />,
-        tokensLevel1Node
-      )}
-    {tokensLevel2Node &&
-      createPortal(
-        <TokensLeftForLevel tokenType={TOKEN.LEVEL2} />,
-        tokensLevel2Node
-      )}
-    {tokensLevel3Node &&
-      createPortal(
-        <TokensLeftForLevel tokenType={TOKEN.LEVEL3} />,
-        tokensLevel3Node
-      )}
+      {totalEthRaisedNode && createPortal(<EthRaised />, totalEthRaisedNode)}
+      {totalTokensNode &&
+        createPortal(<TotalTokens />, totalTokensNode)}
+      {totalTokensLeftNode &&
+        createPortal(<TotalTokensLeft />, totalTokensLeftNode)}
+      {tokenOwnersNode && createPortal(<Owners />, tokenOwnersNode)}
+      {tokensLevel1Node &&
+        createPortal(
+          <TokensLeftForLevel tokenType={TOKEN.LEVEL1} />,
+          tokensLevel1Node
+        )}
+      {tokensLevel2Node &&
+        createPortal(
+          <TokensLeftForLevel tokenType={TOKEN.LEVEL2} />,
+          tokensLevel2Node
+        )}
+      {tokensLevel3Node &&
+        createPortal(
+          <TokensLeftForLevel tokenType={TOKEN.LEVEL3} />,
+          tokensLevel3Node
+        )}
+
+      <AppProvider>
+        {connectBtnNode && createPortal(<ConnectBtn />, connectBtnNode)}
+        {mintBtnLevel1Node &&
+          createPortal(<MintBtn tokenId={TOKEN.LEVEL1} />, mintBtnLevel1Node)}
+        {mintBtnLevel2Node &&
+          createPortal(<MintBtn tokenId={TOKEN.LEVEL2} />, mintBtnLevel2Node)}
+        {mintBtnLevel3Node &&
+          createPortal(<MintBtn tokenId={TOKEN.LEVEL3} />, mintBtnLevel3Node)}
+        <ChangeNetworkModal />
+      </AppProvider>
     </SmartContractProvider>
-
-    <AppProvider>
-      {connectBtnNode && createPortal(<ConnectBtn />, connectBtnNode)}
-      {mintBtnLevel1Node &&
-        createPortal(<MintBtn tokenId={TOKEN.LEVEL1} />, mintBtnLevel1Node)}
-      {mintBtnLevel2Node &&
-        createPortal(<MintBtn tokenId={TOKEN.LEVEL2} />, mintBtnLevel2Node)}
-      {mintBtnLevel3Node &&
-        createPortal(<MintBtn tokenId={TOKEN.LEVEL3} />, mintBtnLevel3Node)}
-      <ChangeNetworkModal />
-    </AppProvider>
   </>
 );
