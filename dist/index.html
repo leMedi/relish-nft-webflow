@@ -121,6 +121,16 @@
         z-index: 9999 !important;
       }</style><script defer="defer" src="bundle.js"></script></head><body><h1>NFT Relish</h1><p>Webflow Mint Test Page</p><div><div class="nav-right"><div id="header-web3-btn"></div></div><div class="body"><div id="mint-btn-level1"></div><div id="mint-btn-level2"></div><div id="mint-btn-level3"></div></div><div>Total ETH raised:<div id="total-eth-raised"></div></div><div>Total tokens:<div id="total-tokens"></div></div><div>Total tokens left:<div id="total-tokens-left"></div></div><div>tokens:<div id="tokens-level1"></div><div id="tokens-level2"></div><div id="tokens-level3"></div></div><div id="token-owners"></div></div><div>prices:<div>level1: <span id="token-level1-price"></span> - <span id="token-level1-price-usd"></span></div><div>level2: <span id="token-level2-price"></span> - <span id="token-level2-price-usd"></span></div><div>level3: <span id="token-level3-price"></span> - <span id="token-level3-price-usd"></span></div></div><div id="react-root"></div><div id="react-newtork-modal"></div><div id="react-tx-modal"></div><script>var SMARTCONTRACT_ADDRESS = "0xF44f4Ac5c35B248cd4EF8c1C047F13b2fC42a8d1";
 
+
+    var isProd = false;
+
+    var dropSlug = "kismet"
+
+    var isTier1Enabled = true;
+    var isTier2Enabled = false;
+    var isTier3Enabled = false;
+
+
       var ABI = [
         {
           inputs: [
